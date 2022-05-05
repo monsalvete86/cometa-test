@@ -59,8 +59,6 @@ const Home: NextPage = () => {
           setPaidOrders(data.filter((order: Orders) => order.status === "PAID"));
           setDueOrders(data.filter((order: Orders) => order.status === "DUE"));
           setOutstandingOrders(data.filter((order: Orders) => order.status === "OUTSTANDING"));
-          console.log('outstandingOrders');
-          console.log(outstandingOrders);
         })
       }
     });

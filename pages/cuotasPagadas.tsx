@@ -16,7 +16,7 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import { createTheme } from '@mui/material/styles';
 import Checkbox from '@mui/material/Checkbox';
-import * as Services from './services';
+import * as Services from './services/services';
 
 const theme = createTheme();
 
@@ -72,34 +72,7 @@ export default function CuotasPagadas(orders: Orders) {
         })}
       </List>
     );
-   /* {paidOrders.map((order) => {
-      console.log(order);
-      <Grid container spacing={2}>
-                <Grid item xs={8}>
-                  <Typography variant="body1" component="div">
-                    fsdfsdf
-                  </Typography>
-                  <Typography  variant="caption" component="div">Vence.....</Typography>
-                </Grid>
-                <Grid item xs={3} >
-                  <Typography  variant="body1" component="div" align="right">
-                    $2,000
-                  </Typography>
-                </Grid>
-                <Grid item xs={1}>
-                  <Checkbox
-                    defaultChecked
-                    sx={{
-                      color: "#000",
-                      "&.Mui-checked": {
-                        color: "#000"
-                      }
-                    }}
-                  />
-                </Grid>
-                /Grid>
-    }}
-    <*/
+
  };
 
   return (

@@ -22,7 +22,7 @@ import Button from '@mui/material/Button';
 import CuotasPagadas from './cuotasPagadas';
 import CuotasPendientes from './cuotasPendientes';
 import CuotasFuturas from './cuotasFuturas';
-import * as Services from './services';
+import * as Services from './services/services';
 
 const theme = createTheme();
 

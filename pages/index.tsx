@@ -14,15 +14,10 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemText from '@mui/material/ListItemText';
-import Checkbox from '@mui/material/Checkbox';
 import Button from '@mui/material/Button';
 import CuotasPagadas from './cuotasPagadas';
 import CuotasPendientes from './cuotasPendientes';
 import CuotasFuturas from './cuotasFuturas';
-import * as Services from './services/services';
 
 const theme = createTheme();
 
@@ -45,15 +40,44 @@ const Home: NextPage = () => {
   const [outstandingOrders, setOutstandingOrders] = useState(null);
   const [total, setTotal] = useState(0);
 
+  async function getStudent() {
+    const response =  await fetch(
+      "http://ec2-3-239-221-74.compute-1.amazonaws.com:8000/api/v1/students/3b35fb50-3d5e-41b3-96d6-c5566141fab0/", 
+      {
+        headers: {
+          hash: "OcJn4jYChW"
+        },
+      method: "GET"
+      }
+    );
+
+    return  response;
+  }
+
+  async function getOrders() {
+    const response =  await fetch(
+      "http://ec2-3-239-221-74.compute-1.amazonaws.com:8000/api/v1/students/3b35fb50-3d5e-41b3-96d6-c5566141fab0/orders/", 
+      {
+        headers: {
+          hash: "OcJn4jYChW"
+        },
+      method: "GET"
+      }
+    );
+
+    return  response;
+  }
+
   useEffect(() => {
-    Services.getStudent()
+   
+    getStudent()
     .then((response) => response.json())  
     .then(data => {
       setStudentName(data.first_name + ' ' + data.last_name);
       setStudentCohort(data.cohort);
       setSchoolName(data?.school?.name);
       if (paidOrders === null) {
-        Services.getOrders()
+        getOrders()
         .then((response) => response.json())  
         .then(data => {
           setPaidOrders(data.filter((order: Orders) => order.status === "PAID"));

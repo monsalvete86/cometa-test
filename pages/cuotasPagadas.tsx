@@ -16,7 +16,6 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import { createTheme } from '@mui/material/styles';
 import Checkbox from '@mui/material/Checkbox';
-import * as Services from './services/services';
 
 const theme = createTheme();
 

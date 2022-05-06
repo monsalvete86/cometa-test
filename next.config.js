@@ -1,5 +1,6 @@
 module.exports = {
+  restrictMode: true,
   experimental: {
-    outputStandalone: false,
+    outputStandalone: true,
   },
 }

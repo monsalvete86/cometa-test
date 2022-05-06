@@ -45,7 +45,9 @@ const Home: NextPage = () => {
       "http://ec2-3-239-221-74.compute-1.amazonaws.com:8000/api/v1/students/3b35fb50-3d5e-41b3-96d6-c5566141fab0/", 
       {
         headers: {
-          hash: "OcJn4jYChW"
+          hash: "OcJn4jYChW",
+          key: "Content-Security-Policy",
+          value: "default-src 'self' https: ; script-src 'self' ; object-src 'none'"
         },
       method: "GET"
       }
@@ -59,7 +61,9 @@ const Home: NextPage = () => {
       "http://ec2-3-239-221-74.compute-1.amazonaws.com:8000/api/v1/students/3b35fb50-3d5e-41b3-96d6-c5566141fab0/orders/", 
       {
         headers: {
-          hash: "OcJn4jYChW"
+          hash: "OcJn4jYChW",
+          key: "Content-Security-Policy",
+          value: "default-src 'self' https: ; script-src 'self' ; object-src 'none'"
         },
       method: "GET"
       }
